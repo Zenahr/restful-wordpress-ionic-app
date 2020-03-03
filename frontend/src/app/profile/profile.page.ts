@@ -19,6 +19,8 @@ export class ProfilePage implements OnInit {
     console.log(f.value)
     this.authService.postLogin(f.value).subscribe(data => {
       console.table(data)
+    }, err => {
+      console.log(err.message)
     })
   }
 
