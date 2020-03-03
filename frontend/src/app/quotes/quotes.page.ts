@@ -11,12 +11,11 @@ export class QuotesPage implements OnInit {
   
   constructor(private dataService: DataService) {
     this.dataService.getData('quotes').subscribe(data => {
-      // console.log(data)
+      console.log(data)
       this.quotes = data
     })
    }
 
   ngOnInit() {
   }
-
 }

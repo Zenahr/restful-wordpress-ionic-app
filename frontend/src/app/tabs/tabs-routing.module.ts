@@ -18,6 +18,16 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'quotes/:id',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../quote-details/quote-details.module').then(m => m.QuoteDetailsPageModule)
+          }
+        ]
+      },
+      {
         path: 'about',
         children: [
           {
