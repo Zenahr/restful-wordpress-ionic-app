@@ -13,6 +13,6 @@ export class DataService {
    }
 
   getData(url: string) {
-    return this.http.get(`${apiUrl}/${url}`)
+    return this.http.get(`${apiUrl}/wp/v2/${url}`)
   }
 }

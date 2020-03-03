@@ -1,3 +1,4 @@
+import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,13 +9,17 @@ import { Component, OnInit } from '@angular/core';
 export class ProfilePage implements OnInit {
   model: any = {}
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
+
   }
 
   onLogin(f) {
     console.log(f.value)
+    this.authService.postLogin(f.value).subscribe(data => {
+      console.table(data)
+    })
   }
 
 }
