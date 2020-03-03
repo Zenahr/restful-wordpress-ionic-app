@@ -9,13 +9,13 @@
   <ion-row>
     <ion-col size="12">
       <ion-list>
-        <ion-item detail *ngFor="let item of [].constructor(24)">
+        <ion-item detail *ngFor="let quote of quotes">
           <ion-label text-wrap> 
             <ion-item lines="none">
-              <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, eius!</h2>
+              <h2 [innerHTML]="quote.title.rendered"></h2>
             </ion-item>
             <ion-item lines="none">
-              <p>~ Author ~</p>
+              <p [innerHTML]="quote.writer"></p>
             </ion-item>
           </ion-label>
         </ion-item>

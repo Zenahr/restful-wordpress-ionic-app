@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-quotes',
@@ -6,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./quotes.page.scss'],
 })
 export class QuotesPage implements OnInit {
-
-  constructor() { }
+  quotes: any = []
+  
+  constructor(private dataService: DataService) {
+    this.dataService.getData('quotes').subscribe(data => {
+      // console.log(data)
+      this.quotes = data
+    })
+   }
 
   ngOnInit() {
   }

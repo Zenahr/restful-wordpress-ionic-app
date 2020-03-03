@@ -8,7 +8,9 @@ const apiUrl = environment.apiUrl;
 })
 export class DataService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.http = http
+   }
 
   getData(url: string) {
     return this.http.get(`${apiUrl}/${url}`)
