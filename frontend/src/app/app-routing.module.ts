@@ -9,6 +9,26 @@ const routes: Routes = [
   {
     path: 'quotes',
     loadChildren: () => import('./quotes/quotes.module').then( m => m.QuotesPageModule)
+  },
+  {
+    path: 'quotes-details',
+    loadChildren: () => import('./quotes-details/quotes-details.module').then( m => m.QuotesDetailsPageModule)
+  },
+  {
+    path: 'quote-details',
+    loadChildren: () => import('./quote-details/quote-details.module').then( m => m.QuoteDetailsPageModule)
+  },
+  {
+    path: 'edit-quote',
+    loadChildren: () => import('./edit-quote/edit-quote.module').then( m => m.EditQuotePageModule)
+  },
+  {
+    path: 'about',
+    loadChildren: () => import('./about/about.module').then( m => m.AboutPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   }
 ];
 @NgModule({
