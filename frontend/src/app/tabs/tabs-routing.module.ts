@@ -18,6 +18,26 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'quotes/:id/edit',
+        children: [
+          {
+            path: '',
+            loadChildren: () => 
+            import('../edit-quote/edit-quote.module').then(m => m.EditQuotePageModule)
+          }
+        ]
+      },
+      {
+        path: 'quotes/edit-quote',
+        children: [
+          {
+            path: '',
+            loadChildren: () =>
+              import('../edit-quote/edit-quote.module').then(m => m.EditQuotePageModule)
+          }
+        ]
+      },
+      {
         path: 'quotes/:id',
         children: [
           {

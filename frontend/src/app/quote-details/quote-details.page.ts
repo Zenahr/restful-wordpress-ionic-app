@@ -1,3 +1,4 @@
+import { AuthService } from './../auth.service';
 import { DataService } from './../data.service';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -11,7 +12,9 @@ export class QuoteDetailsPage implements OnInit {
 
   quote;
 
-  constructor(private activatedRoute: ActivatedRoute, private dataService: DataService) { }
+  constructor(private activatedRoute: ActivatedRoute, private dataService: DataService, public authService: AuthService) { }
+
+
 
   ngOnInit() {
     const id = this.activatedRoute.snapshot.paramMap.get('id')

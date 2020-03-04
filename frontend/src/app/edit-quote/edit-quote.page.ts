@@ -1,3 +1,4 @@
+import { DataService } from './../data.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditQuotePage implements OnInit {
 
-  constructor() { }
+  model: any = {}
+
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
   }
 
+  onEditQuote(f) {
+    console.table(f.value)
+    this.dataService.postData('quotes', f.value).subscribe(data => {
+      console.log(data)
+    })
+  }
 }
