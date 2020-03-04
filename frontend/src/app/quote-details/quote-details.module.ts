@@ -1,19 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { QuoteDetailsPageRoutingModule } from './quote-details-routing.module';
-
 import { QuoteDetailsPage } from './quote-details.page';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: QuoteDetailsPage
+  }
+];
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    QuoteDetailsPageRoutingModule
+    RouterModule.forChild(routes)
   ],
   declarations: [QuoteDetailsPage]
 })
